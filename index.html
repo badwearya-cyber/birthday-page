@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Person 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #fbc2eb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+/* Glass Card */
+.card {
+    width: 95%;
+    max-width: 1000px;
+    padding: 50px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    box-shadow: 0 0 60px rgba(255,255,255,0.4);
+    text-align: center;
+    color: #ffffff;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.card h1 {
+    font-size: 42px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 15px rgba(255,255,255,0.9);
+    animation: glowText 2s infinite alternate;
+}
+
+.message {
+    font-size: 22px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    text-shadow: 0 0 10px rgba(0,0,0,0.9);
+    animation: slideUp 2s ease-in-out;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px 0 35px 0;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: 0.4s ease;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 25px 60px rgba(255,255,255,0.7);
+}
+
+button {
+    padding: 14px 40px;
+    border-radius: 40px;
+    border: none;
+    background: white;
+    color: #ff4d6d;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    margin: 10px;
+}
+
+button:hover {
+    background: #ff4d6d;
+    color: white;
+    transform: scale(1.1);
+}
+
+.hidden {
+    margin-top: 30px;
+    font-size: 20px;
+    display: none;
+    text-shadow: 0 0 12px rgba(255,255,255,0.9);
+    animation: fadeIn 2s ease;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-100vh); opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@keyframes slideUp {
+    from {transform: translateY(40px); opacity:0;}
+    to {transform: translateY(0); opacity:1;}
+}
+
+@keyframes glowText {
+    from { text-shadow: 0 0 10px #fff; }
+    to { text-shadow: 0 0 30px #ffccff; }
+}
+
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="is-this-love-kismat-konnection-mr-jatin_oLZsSZlu.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+    <h1>🎂 Happy Birthday My Favorite Human 💖</h1>
+
+    <div class="message">
+        I know we had a small fight…  
+        And maybe I was wrong.  
+        But when you stop talking to me…  
+        <b>Kahi na lage mann…</b> 🥺💔  
+        <br><br>
+        You are my comfort, my happiness, my safe place.  
+        On your birthday… I just want your smile back. 💫  
+    </div>
+
+    <div class="gallery">
+        <img src="img1.jpg">
+        <img src="img2.jpg">
+        <img src="img3.jpg">
+    </div>
+
+    <button onclick="showLove()">Click If You Still Care 🥹</button>
+    <button onclick="showGallery()">Warning: Too Much Cuteness Ahead 😜</button>
+    <button onclick="showAngryQuestion()">Maaf kelas na 😅</button>
+
+    <div class="hidden" id="loveMessage">
+        They say home is not a place, it’s a person… and whenever I’m with you, I feel home 🤍
+You are my calm in chaos, my sunshine after rain, and the quiet happiness my heart always looks for ✨
+    </div>
+
+    <div class="hidden" id="extraGallery">
+        <h2>Too Cute to Be Real 💖</h2>
+        <div class="gallery">
+            <img src="cute1.jpeg">
+            <img src="cute2.jpeg">
+            <img src="cute3.jpeg">
+        </div>
+
+        <h2>Certified Cutie Moments 😂</h2>
+        <div class="gallery">
+            <img src="funny1.jpeg">
+            <img src="funny2.jpeg">
+        </div>
+    </div>
+
+    <div class="hidden" id="angrySection">
+        <button onclick="alert('Mala mahit hota 😌💖')">Yes 😌</button>
+        <button id="noBtn">No 😜</button>
+    </div>
+
+</div>
+
+<script>
+
+function showLove() {
+    document.getElementById("loveMessage").style.display = "block";
+}
+
+function showGallery() {
+    document.getElementById("extraGallery").style.display = "block";
+}
+
+function showAngryQuestion() {
+    document.getElementById("angrySection").style.display = "block";
+}
+
+// Wait until DOM loads before attaching event
+document.addEventListener("DOMContentLoaded", function () {
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", function () {
+        const x = Math.random() * (window.innerWidth - 150);
+        const y = Math.random() * (window.innerHeight - 150);
+        noBtn.style.position = "absolute";
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    });
+});
+
+// Floating hearts
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}, 500);
+
+</script>
+
+</body>
+</html>
